@@ -1,0 +1,21 @@
+<h1>Employee</h1>
+<div [hidden]="IsAddNew">
+    <input type="button" value="Add New" (click)="ShowAddNew()">
+    <table border="1">
+        <tr>
+            <th>Emp Name</th>
+            <th>Salary </th>
+        </tr>
+        <tr *ngFor="let emp of Employees">
+            <td>{{emp.FName}} {{emp.LName}}</td>
+            <td>{{emp.Salary}}</td>
+        </tr>
+    </table>
+</div>
+<div [hidden]="!IsAddNew">
+    FName: <input type="text"><br>
+    LName: <input type="text"><br>
+    Salary: <input type="text"><br>
+    <input type="button" value="Save" (click)="SaveEmployee()">
+    <input type="button" value="Cancel" (click)="HideAddNew()">
+</div>
